@@ -1,0 +1,8 @@
+- name: Deploy pluto
+  hosts: feeds.community
+  gather_facts: yes
+  become: yes
+  tasks:
+    - name: Set up feed aggregator
+      include_role:
+        name: feed-aggregator

@@ -1,0 +1,19 @@
+# {{ ansible_managed }}
+
+title = Ansible community release feeds
+
+{% for repo in aggregator_collection_repositories %}
+[collection_{{ repo | replace('https://github.com/', '') }}]
+  title = {{ repo | replace('https://', '') }}
+  link  = {{ repo }}
+  feed  = {{ repo }}/tags.atom
+
+{% endfor %}
+
+{% for feed in aggregator_pypi_feeds %}
+[pypi_{{ feed | replace('https://pypi.org/rss/project/', '') | replace('/releases.xml', '') }}]
+  title = {{ feed | replace('https://', '') | replace('/rss', '') | replace('/releases.xml', '') }}
+  link  = {{ feed | replace('/rss', '') | replace('/releases.xml', '') }}
+  feed  = {{ feed }}
+
+{% endfor %}

@@ -1,0 +1,45 @@
+---
+# (c) 2021 Ansible Project
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+- name: Install dependencies
+  package:
+    name: "{{ aggregator_required_packages }}"
+    state: present
+
+- name: Install pluto planet aggregator
+  community.general.gem:
+    name: pluto
+    state: present
+
+- name: Create directory for pluto files
+  file:
+    path: /var/lib/feed-aggregator
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Create configuration file
+  template:
+    src: planet.ini.j2
+    dest: /var/lib/feed-aggregator/planet.ini
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Create build directory
+  file:
+    path: /var/www/feed-aggregator
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+# TODO: Put this in a cron, log the output into a directory and set up logrotate
+- name: Do a build
+  command: pluto build --output /var/www/feed-aggregator
+  args:
+    chdir: /var/lib/feed-aggregator
+
+# TODO: Set up nginx to /var/www/feed-aggregator with planet.html as index

@@ -1,0 +1,118 @@
+---
+# (c) 2021 Ansible Project
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+aggregator_required_packages:
+  - git
+  - ruby-bundler
+  - sqlite3
+  - gcc
+  - make
+  - libsqlite3-dev
+  - ruby-dev
+  - nginx
+
+aggregator_collection_repositories:
+  - https://github.com/ansible-collections/amazon.aws
+  - https://github.com/ansible-collections/ansible.netcommon
+  - https://github.com/ansible-collections/ansible.posix
+  - https://github.com/ansible-collections/ansible.windows
+  - https://github.com/ansible-collections/arista.eos
+  - https://github.com/ansible/awx
+  - https://github.com/ansible-collections/azure
+  - https://github.com/CheckPointSW/CheckPointAnsibleMgmtCollection
+  - https://github.com/chocolatey/chocolatey-ansible
+  - https://github.com/CiscoDevNet/ansible-aci
+  - https://github.com/ansible-collections/cisco.asa
+  - https://github.com/CiscoDevNet/intersight-ansible
+  - https://github.com/ansible-collections/cisco.ios
+  - https://github.com/ansible-collections/cisco.iosxr
+  - https://github.com/CiscoDevNet/ansible-meraki
+  - https://github.com/CiscoDevNet/ansible-mso
+  - https://github.com/CiscoDevNet/ansible-nso
+  - https://github.com/ansible-collections/nxos
+  - https://github.com/CiscoDevNet/ansible-ucs
+  - https://github.com/cloudscale-ch/ansible-collection-cloudscale
+  - https://github.com/ansible-collections/community.aws
+  - https://github.com/ansible-collections/community.azure
+  - https://github.com/ansible-collections/community.crypto
+  - https://github.com/ansible-collections/community.digitalocean
+  - https://github.com/ansible-collections/community.docker
+  - https://github.com/ansible-collections/community.fortios
+  - https://github.com/ansible-collections/community.general
+  - https://github.com/ansible-collections/community.google
+# - https://github.com/ansible-collections/grafana.git TODO
+  - https://github.com/ansible-collections/grafana
+  - https://github.com/ansible-collections/community.hashi_vault
+  - https://github.com/ansible-collections/community.hrobot
+  - https://github.com/ansible-collections/community.kubernetes
+  - https://github.com/ansible-collections/community.kubevirt
+  - https://github.com/ansible-collections/community.libvirt
+  - https://github.com/ansible-collections/community.mongodb
+  - https://github.com/ansible-collections/community.mysql
+  - https://github.com/ansible-collections/community.network
+  - https://github.com/ansible-collections/community.okd
+  - https://github.com/ansible-collections/community.postgresql
+  - https://github.com/ansible-collections/community.proxysql
+  - https://github.com/ansible-collections/community.rabbitmq
+  - https://github.com/ansible-collections/community.routeros
+  - https://github.com/ansible-collections/skydive
+  - https://github.com/ansible-collections/community.sops
+# - https://github.com/ansible-collections/community.vmware.git TODO
+  - https://github.com/ansible-collections/community.vmware
+  - https://github.com/ansible-collections/community.windows
+# - https://github.com/ansible-collections/community.zabbix.git TODO
+  - https://github.com/ansible-collections/community.zabbix
+# - https://github.com/containers/ansible-podman-collections.git TODO
+  - https://github.com/containers/ansible-podman-collections
+  - https://github.com/cyberark/ansible-conjur-collection
+  - https://github.com/cyberark/ansible-security-automation-collection
+# - https://github.com/dell/dellemc-openmanage-ansible-modules/tree/collections TODO
+  - https://github.com/dell/dellemc-openmanage-ansible-modules
+  - https://github.com/ansible-collections/dellemc.os10
+  - https://github.com/ansible-collections/dellemc.os6
+  - https://github.com/ansible-collections/dellemc.os9
+  - https://github.com/F5Networks/f5-ansible
+# - https://github.com/fortinet-ansible-dev/ansible-galaxy-fortimanager-collection/tree/galaxy/2.0.1 TODO
+  - https://github.com/fortinet-ansible-dev/ansible-galaxy-fortimanager-collection
+# - https://github.com/fortinet-ansible-dev/ansible-galaxy-fortios-collection/tree/fos_v6.0.0/galaxy_1.1.9 TODO
+  - https://github.com/fortinet-ansible-dev/ansible-galaxy-fortios-collection
+  - https://github.com/ansible-collections/frr.frr
+  - https://github.com/gluster/gluster-ansible-collection
+# - http://github.com/ansible/ansible_collections_google # https://github.com/ansible-collections/google.cloud/pull/387
+  - https://github.com/ansible-collections/google.cloud
+  - https://github.com/ansible-collections/hetzner.hcloud
+  - https://github.com/ansible-collections/ibm.qradar
+  - https://github.com/infinidat/ansible-infinidat-collection
+  - https://github.com/ansible-collections/junipernetworks.junos
+  - https://github.com/ansible-collections/mellanox.onyx
+  - https://github.com/ansible-collections/netapp
+  - https://github.com/ansible-collections/netapp
+  - https://github.com/netapp-eseries/santricity
+  - https://github.com/ansible-collections/netapp
+  - https://github.com/netbox-community/ansible_modules
+  - https://github.com/ngine-io/ansible-collection-cloudstack
+  - https://github.com/ngine-io/ansible-collection-exoscale
+  - https://github.com/ngine-io/ansible-collection-vultr
+# - https://opendev.org/openstack/ansible-collections-openstack # gitea: https://github.com/go-gitea/gitea/issues/569
+  - https://github.com/openstack/ansible-collections-openstack
+  - https://github.com/ansible-collections/openvswitch.openvswitch
+  - https://github.com/ovirt/ovirt-ansible-collection
+  - https://github.com/Pure-Storage-Ansible/FlashArray-Collection
+  - https://github.com/Pure-Storage-Ansible/FlashBlade-Collection
+  - https://github.com/sensu/sensu-go-ansible
+  - https://github.com/ServiceNowITOM/servicenow-ansible
+  - https://github.com/ansible-collections/splunk.es
+  - https://github.com/theforeman/foreman-ansible-modules
+  - https://github.com/T-Systems-MMS/ansible-collection-icinga-director
+  - https://github.com/ansible-collections/vyos.vyos
+  - https://github.com/wtinetworkgear/wti-collection
+
+aggregator_pypi_feeds:
+  - https://pypi.org/rss/project/ansible/releases.xml
+  - https://pypi.org/rss/project/ansible-builder/releases.xml
+  - https://pypi.org/rss/project/ansible-core/releases.xml
+  - https://pypi.org/rss/project/ansible-runner/releases.xml
+  - https://pypi.org/rss/project/ansible-navigator/releases.xml
+  - https://pypi.org/rss/project/ansible-lint/releases.xml
+  - https://pypi.org/rss/project/molecule/releases.xml
