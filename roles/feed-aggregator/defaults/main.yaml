@@ -27,6 +27,7 @@ aggregator_collection_repositories:
   - https://github.com/ansible-collections/amazon.aws
   - https://github.com/ansible-collections/ansible.netcommon
   - https://github.com/ansible-collections/ansible.posix
+  - https://github.com/ansible-collections/ansible.utils
   - https://github.com/ansible-collections/ansible.windows
   - https://github.com/ansible-collections/arista.eos
   - https://github.com/ansible/awx
@@ -52,7 +53,7 @@ aggregator_collection_repositories:
   - https://github.com/ansible-collections/community.fortios
   - https://github.com/ansible-collections/community.general
   - https://github.com/ansible-collections/community.google
-# - https://github.com/ansible-collections/grafana.git TODO
+  # - https://github.com/ansible-collections/grafana.git
   - https://github.com/ansible-collections/grafana
   - https://github.com/ansible-collections/community.hashi_vault
   - https://github.com/ansible-collections/community.hrobot
@@ -69,43 +70,47 @@ aggregator_collection_repositories:
   - https://github.com/ansible-collections/community.routeros
   - https://github.com/ansible-collections/skydive
   - https://github.com/ansible-collections/community.sops
-# - https://github.com/ansible-collections/community.vmware.git TODO
+  # - https://github.com/ansible-collections/community.vmware.git
   - https://github.com/ansible-collections/community.vmware
   - https://github.com/ansible-collections/community.windows
-# - https://github.com/ansible-collections/community.zabbix.git TODO
+  # - https://github.com/ansible-collections/community.zabbix.git
   - https://github.com/ansible-collections/community.zabbix
-# - https://github.com/containers/ansible-podman-collections.git TODO
+  # - https://github.com/containers/ansible-podman-collections.git
   - https://github.com/containers/ansible-podman-collections
   - https://github.com/cyberark/ansible-conjur-collection
   - https://github.com/cyberark/ansible-security-automation-collection
-# - https://github.com/dell/dellemc-openmanage-ansible-modules/tree/collections TODO
+  - https://github.com/ansible-collections/dellemc.enterprise_sonic
   - https://github.com/dell/dellemc-openmanage-ansible-modules
   - https://github.com/ansible-collections/dellemc.os10
   - https://github.com/ansible-collections/dellemc.os6
   - https://github.com/ansible-collections/dellemc.os9
   - https://github.com/F5Networks/f5-ansible
-# - https://github.com/fortinet-ansible-dev/ansible-galaxy-fortimanager-collection/tree/galaxy/2.0.1 TODO
+  # - https://github.com/fortinet-ansible-dev/ansible-galaxy-fortimanager-collection/tree/galaxy/2.1.3
   - https://github.com/fortinet-ansible-dev/ansible-galaxy-fortimanager-collection
-# - https://github.com/fortinet-ansible-dev/ansible-galaxy-fortios-collection/tree/fos_v6.0.0/galaxy_1.1.9 TODO
+  # - https://github.com/fortinet-ansible-dev/ansible-galaxy-fortios-collection/tree/fos_v6.0.0/galaxy_2.1.2
   - https://github.com/fortinet-ansible-dev/ansible-galaxy-fortios-collection
   - https://github.com/ansible-collections/frr.frr
   - https://github.com/gluster/gluster-ansible-collection
-# - http://github.com/ansible/ansible_collections_google # https://github.com/ansible-collections/google.cloud/pull/387
   - https://github.com/ansible-collections/google.cloud
   - https://github.com/ansible-collections/hetzner.hcloud
+  - https://github.com/hpe-storage/nimble-ansible-modules
   - https://github.com/ansible-collections/ibm.qradar
   - https://github.com/infinidat/ansible-infinidat-collection
+  - https://github.com/ISIB-Group/inspur.sm
   - https://github.com/ansible-collections/junipernetworks.junos
+  - https://github.com/ansible-collections/kubernetes.core
   - https://github.com/ansible-collections/mellanox.onyx
+  - https://github.com/ansible-collections/netapp.aws
   - https://github.com/ansible-collections/netapp
+  - https://github.com/ansible-collections/netapp.cloudmanager
   - https://github.com/ansible-collections/netapp
   - https://github.com/netapp-eseries/santricity
+  - https://github.com/ansible-collections/netapp.ontap
   - https://github.com/ansible-collections/netapp
   - https://github.com/netbox-community/ansible_modules
   - https://github.com/ngine-io/ansible-collection-cloudstack
   - https://github.com/ngine-io/ansible-collection-exoscale
   - https://github.com/ngine-io/ansible-collection-vultr
-# - https://opendev.org/openstack/ansible-collections-openstack # gitea: https://github.com/go-gitea/gitea/issues/569
   - https://github.com/openstack/ansible-collections-openstack
   - https://github.com/ansible-collections/openvswitch.openvswitch
   - https://github.com/ovirt/ovirt-ansible-collection
