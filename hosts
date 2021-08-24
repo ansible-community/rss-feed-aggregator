@@ -1,2 +1,1 @@
-# TODO: put the actual host
-feeds.community ansible_host=127.0.0.1 ansible_user=debian ansible_python_interpreter=/usr/bin/python3
+rss.community.eng.ansible.com ansible_user=fedora

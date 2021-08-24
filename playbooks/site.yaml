@@ -1,5 +1,5 @@
 - name: Deploy pluto
-  hosts: feeds.community
+  hosts: rss.community.eng.ansible.com
   gather_facts: yes
   become: yes
   tasks:
