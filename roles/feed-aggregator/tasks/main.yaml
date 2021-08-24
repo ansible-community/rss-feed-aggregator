@@ -7,6 +7,14 @@
     name: "{{ aggregator_required_packages }}"
     state: present
 
+# crontab may nopt be installed by default and installing cronie doesn't start
+# the crond service.
+- name: Ensure crond is started and enabled
+  service:
+    name: crond
+    state: started
+    enabled: yes
+
 - name: Install gems for rss and pluto planet aggregator
   community.general.gem:
     name: "{{ item }}"
@@ -47,11 +55,15 @@
     creates: "{{ aggregator_www_dir }}/planet.html"
     chdir: "{{ aggregator_lib_dir }}"
 
-- name: Set up a cron to build updates on a regular basis
+- name: Set up a cron to build updates every hour
   cron:
     name: "pluto-rss-update"
-    special_time: hourly
-    job: "cd {{ aggregator_lib_dir }}; pluto build --output {{ aggregator_www_dir }} | tee | systemd-cat -t 'pluto-rss-update' -p info"
+    minute: 0
+    hour: "*"
+    day: "*"
+    weekday: "*"
+    month: "*"
+    job: "cd {{ aggregator_lib_dir }}; /usr/local/bin/pluto build --output {{ aggregator_www_dir }} | tee | systemd-cat -t 'pluto-rss-update' -p info"
 
 - name: Set up nginx configuration
   template:
