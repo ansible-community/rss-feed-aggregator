@@ -1,6 +1,6 @@
 # {{ ansible_managed }}
 
-title = Ansible community release feeds
+title = Ansible community RSS feeds
 
 {% for repo in aggregator_collection_repositories %}
 [collection_{{ repo | replace('https://github.com/', '') }}]

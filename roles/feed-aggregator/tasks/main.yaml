@@ -7,10 +7,14 @@
     name: "{{ aggregator_required_packages }}"
     state: present
 
-- name: Install pluto planet aggregator
+- name: Install gems for rss and pluto planet aggregator
   community.general.gem:
-    name: pluto
+    name: "{{ item }}"
     state: present
+    # https://github.com/ansible-collections/community.general/issues/3259
+    user_install: no
+  # gem doesn't support providing a list to name
+  loop: "{{ aggregator_required_gems }}"
 
 - name: Create directory for pluto files
   file:
@@ -34,12 +38,35 @@
     state: directory
     owner: root
     group: root
+    setype: httpd_sys_content_t
     mode: 0755
 
-# TODO: Put this in a cron, log the output into a directory and set up logrotate
-- name: Do a build
+- name: Do a first build
   command: pluto build --output /var/www/feed-aggregator
   args:
+    creates: /var/www/feed-aggregator/planet.html
     chdir: /var/lib/feed-aggregator
 
-# TODO: Set up nginx to /var/www/feed-aggregator with planet.html as index
+- name: Set up a cron to build updates on a regular basis
+  cron:
+    name: "pluto-rss-update"
+    special_time: hourly
+    job: "cd /var/lib/feed-aggregator; pluto build | tee | systemd-cat -t 'pluto-rss-update' -p info"
+
+- name: Set up nginx configuration
+  template:
+    src: feed-aggregator.conf.j2
+    dest: "/etc/nginx/conf.d/{{ aggregator_fqdn }}.conf"
+  register: _nginx_conf
+
+- name: Restart nginx if necessary
+  service:
+    name: nginx
+    state: restarted
+  when: _nginx_conf is changed
+
+- name: Ensure nginx is started and enabled
+  service:
+    name: nginx
+    state: started
+    enabled: yes

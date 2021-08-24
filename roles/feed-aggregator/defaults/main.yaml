@@ -2,15 +2,22 @@
 # (c) 2021 Ansible Project
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
+aggregator_fqdn: rss.community.eng.ansible.com
+
 aggregator_required_packages:
-  - git
-  - ruby-bundler
-  - sqlite3
+  - cronie
   - gcc
+  - git
   - make
-  - libsqlite3-dev
-  - ruby-dev
   - nginx
+  - rubygems
+  - ruby-devel
+  - sqlite
+  - sqlite-devel
+
+aggregator_required_gems:
+  - rss
+  - pluto
 
 aggregator_collection_repositories:
   - https://github.com/ansible-collections/amazon.aws

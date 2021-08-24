@@ -1,0 +1,29 @@
+server {
+    listen 80;
+    server_name {{ aggregator_fqdn }};
+    return 301 https://{{ aggregator_fqdn }}$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name {{ aggregator_fqdn }};
+    root /var/www/feed-aggregator/;
+    index planet.html;
+
+    access_log /var/log/nginx/{{ aggregator_fqdn }}_access.log;
+    error_log  /var/log/nginx/{{ aggregator_fqdn }}_error.log;
+
+    ssl_certificate /etc/letsencrypt/live/{{ aggregator_fqdn }}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/{{ aggregator_fqdn }}/privkey.pem;
+    ssl_session_cache   shared:SSL:10m;
+    ssl_session_timeout 10m;
+    ssl_protocols       TLSv1.2 TLSv1.3;
+    ssl_ciphers         EECDH+AESGCM:EDH+AESGCM;
+
+    # Static content doesn't change, cache it
+    location ~* \.(?:png|css|js|otf|eot|svg|ttf|woff)$ {
+        expires 1M;
+        access_log off;
+        add_header Cache-Control "public";
+    }
+}
