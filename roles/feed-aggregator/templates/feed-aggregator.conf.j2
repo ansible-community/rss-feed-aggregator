@@ -7,14 +7,14 @@ server {
 server {
     listen 443 ssl;
     server_name {{ aggregator_fqdn }};
-    root /var/www/feed-aggregator/;
+    root {{ aggregator_www_dir }}/;
     index planet.html;
 
     access_log /var/log/nginx/{{ aggregator_fqdn }}_access.log;
     error_log  /var/log/nginx/{{ aggregator_fqdn }}_error.log;
 
-    ssl_certificate /etc/letsencrypt/live/{{ aggregator_fqdn }}/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/{{ aggregator_fqdn }}/privkey.pem;
+    ssl_certificate {{ aggregator_ssl_cert }};
+    ssl_certificate_key {{ aggregator_ssl_key }};
     ssl_session_cache   shared:SSL:10m;
     ssl_session_timeout 10m;
     ssl_protocols       TLSv1.2 TLSv1.3;

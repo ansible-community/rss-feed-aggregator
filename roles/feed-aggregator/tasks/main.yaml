@@ -18,7 +18,7 @@
 
 - name: Create directory for pluto files
   file:
-    path: /var/lib/feed-aggregator
+    path: "{{ aggregator_lib_dir }}"
     state: directory
     owner: root
     group: root
@@ -27,14 +27,14 @@
 - name: Create configuration file
   template:
     src: planet.ini.j2
-    dest: /var/lib/feed-aggregator/planet.ini
+    dest: "{{ aggregator_lib_dir }}/planet.ini"
     owner: root
     group: root
     mode: 0644
 
 - name: Create build directory
   file:
-    path: /var/www/feed-aggregator
+    path: "{{ aggregator_www_dir }}"
     state: directory
     owner: root
     group: root
@@ -42,16 +42,16 @@
     mode: 0755
 
 - name: Do a first build
-  command: pluto build --output /var/www/feed-aggregator
+  command: pluto build --output {{ aggregator_www_dir }}
   args:
-    creates: /var/www/feed-aggregator/planet.html
-    chdir: /var/lib/feed-aggregator
+    creates: "{{ aggregator_www_dir }}/planet.html"
+    chdir: "{{ aggregator_lib_dir }}"
 
 - name: Set up a cron to build updates on a regular basis
   cron:
     name: "pluto-rss-update"
     special_time: hourly
-    job: "cd /var/lib/feed-aggregator; pluto build | tee | systemd-cat -t 'pluto-rss-update' -p info"
+    job: "cd {{ aggregator_lib_dir }}; pluto build --output {{ aggregator_www_dir }} | tee | systemd-cat -t 'pluto-rss-update' -p info"
 
 - name: Set up nginx configuration
   template:
