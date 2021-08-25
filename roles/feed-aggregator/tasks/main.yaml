@@ -32,6 +32,21 @@
     group: root
     mode: 0755
 
+- name: Create directory for theme override
+  file:
+    path: "{{ ansible_user_dir }}/.pluto"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Retrieve customized blank template
+  git:
+    repo: "{{ aggregator_template_repo }}"
+    dest: "{{ ansible_user_dir }}/.pluto/blank"
+    force: true
+    update: true
+
 - name: Create configuration file
   template:
     src: planet.ini.j2

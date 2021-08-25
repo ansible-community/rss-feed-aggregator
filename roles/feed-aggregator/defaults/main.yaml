@@ -7,6 +7,7 @@ aggregator_lib_dir: /var/lib/feed-aggregator
 aggregator_www_dir: /var/www/feed-aggregator
 aggregator_ssl_cert: /etc/letsencrypt/live/{{ aggregator_fqdn }}/fullchain.pem
 aggregator_ssl_key: /etc/letsencrypt/live/{{ aggregator_fqdn }}/privkey.pem
+aggregator_template_repo: https://github.com/ansible-community/rss-feed-aggregator-template
 
 aggregator_required_packages:
   - cronie
