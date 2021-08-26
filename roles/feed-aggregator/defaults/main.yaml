@@ -122,6 +122,10 @@ aggregator_collection_repositories:
   - https://github.com/ansible-collections/splunk.es
   - https://github.com/theforeman/foreman-ansible-modules
   - https://github.com/T-Systems-MMS/ansible-collection-icinga-director
+  - https://github.com/T-Systems-MMS/ansible-collection-acme
+  - https://github.com/T-Systems-MMS/ansible-collection-mongodb-atlas
+  - https://github.com/T-Systems-MMS/ansible-collection-icinga
+  - https://github.com/T-Systems-MMS/ansible-collection-icinga-business-process
   - https://github.com/ansible-collections/vyos.vyos
   - https://github.com/wtinetworkgear/wti-collection
 
@@ -133,3 +137,4 @@ aggregator_pypi_feeds:
   - https://pypi.org/rss/project/ansible-navigator/releases.xml
   - https://pypi.org/rss/project/ansible-lint/releases.xml
   - https://pypi.org/rss/project/molecule/releases.xml
+  - https://pypi.org/rss/project/antsichaut/releases.xml
