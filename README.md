@@ -27,3 +27,4 @@ pluto then builds a static HTML website aggregating all the feeds to a specified
 
 - Some collections report an erroneous (or otherwise incorrect) repository URL in their galaxy.yml, see TODOs in ``roles/feed-aggregator/defaults/main.yaml``.
 - openstack.cloud is hosted on gitea (although it is mirrored on github) and RSS support for gitea is a work in progress: https://github.com/go-gitea/gitea/issues/569
+- Add a CI job with Zuul or a GitHub Action that tests the deployment in PRs
