@@ -121,9 +121,16 @@ aggregator_collection_repositories:
   - https://github.com/ServiceNowITOM/servicenow-ansible
   - https://github.com/ansible-collections/splunk.es
   - https://github.com/theforeman/foreman-ansible-modules
-  - https://github.com/T-Systems-MMS/ansible-collection-icinga-director
   - https://github.com/ansible-collections/vyos.vyos
   - https://github.com/wtinetworkgear/wti-collection
+  - https://github.com/T-Systems-MMS/ansible-collection-icinga-director
+  
+  # Collections that are not yet included in the Ansible community package
+  - https://github.com/T-Systems-MMS/ansible-collection-acme
+  - https://github.com/T-Systems-MMS/ansible-collection-mongodb-atlas
+  - https://github.com/T-Systems-MMS/ansible-collection-icinga
+  - https://github.com/T-Systems-MMS/ansible-collection-icinga-business-process
+  - https://github.com/dev-sec/ansible-collection-hardening
 
 aggregator_pypi_feeds:
   - https://pypi.org/rss/project/ansible/releases.xml
@@ -133,3 +140,4 @@ aggregator_pypi_feeds:
   - https://pypi.org/rss/project/ansible-navigator/releases.xml
   - https://pypi.org/rss/project/ansible-lint/releases.xml
   - https://pypi.org/rss/project/molecule/releases.xml
+  - https://pypi.org/rss/project/antsichaut/releases.xml
