@@ -123,10 +123,10 @@ aggregator_collection_repositories:
   - https://github.com/theforeman/foreman-ansible-modules
   - https://github.com/ansible-collections/vyos.vyos
   - https://github.com/wtinetworkgear/wti-collection
-  - https://github.com/T-Systems-MMS/ansible-collection-icinga-director
+  - https://github.com/telekom-mms/ansible-collection-icinga-director
   
   # Collections that are not yet included in the Ansible community package
-  - https://github.com/T-Systems-MMS/ansible-collection-acme
+  - https://github.com/telekom-mms/ansible-collection-acme
   - https://github.com/T-Systems-MMS/ansible-collection-mongodb-atlas
   - https://github.com/T-Systems-MMS/ansible-collection-icinga
   - https://github.com/T-Systems-MMS/ansible-collection-icinga-business-process
